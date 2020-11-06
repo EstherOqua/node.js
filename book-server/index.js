@@ -37,15 +37,15 @@ app.use(cors())
 app.use(express.json()) // for parsing application/json
     
     
-// GET /profiles
-app.get('/profiles', (req, res) => {
+// GET /books
+app.get('/book', (req, res) => {
     res.status(200).json({
         status: 'success',
         data: db.profiles
       })
 })
     
-// POST /profiles
+// POST /books
 app.post('/profiles', (req, res) => {
     
     // find the largest key and increment it
@@ -82,7 +82,7 @@ app.get('/profiles/:userId', (req, res) => {
     })
     
 //Delete profile
-app.delete('/profiles/:userId', (req, res) => {
+app.delete('/books/:bookId', (req, res) => {
     
     delete db.profiles[req.params.userId]
     
