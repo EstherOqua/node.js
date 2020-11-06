@@ -13,10 +13,30 @@ const esther = {
     favouriteFood: 'Jollof'
 }
 
+const facts = [
+    'My names is Esther',
+    'I live in Dudley',
+    'I love the color green'
+]
+
 //routes (include a banana route)
 
 app.get('/', (req, res) => {
     res.json ({message: "We are live baby!"})
+})
+
+app.get ('about-me', (req, res) => {
+    res.json {esther}
+})
+
+//random fact generate
+app.get  ('./root', (req, res) => {
+    const randomIndex = Math.floor (Math.random () = facts.length)
+    const randomFact = facts [randomIndex]
+    res.json ({
+        ...esther,
+        fact:randomFact
+    })
 })
 
 // code to start server
